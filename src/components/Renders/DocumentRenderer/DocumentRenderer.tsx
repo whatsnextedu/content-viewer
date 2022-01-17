@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react'
 
+import DownloadIcon from '../../DownloadIcon/DownloadIcon'
+
 import type { VFC, CSSProperties } from 'react'
 
 const DocumentRenderer: VFC<{ source: string; styles?: CSSProperties; className?: string }> = ({
@@ -12,22 +14,19 @@ const DocumentRenderer: VFC<{ source: string; styles?: CSSProperties; className?
 
     if (source.includes('docs.google.com')) {
       finalSource = source
-    } else if (
-      source.endsWith('.pdf') ||
-      source.endsWith('.csv') ||
-      source.endsWith('.tsv') ||
-      source.endsWith('.doc') ||
-      source.endsWith('.docx')
-    ) {
-      finalSource = 'https://docs.google.com/viewer?url=' + source + '&embedded=true'
     } else {
-      finalSource = 'https://view.officeapps.live.com/op/embed.aspx?src=' + source
+      finalSource = `https://docs.google.com/viewer?url=${source}&embedded=true`
     }
 
     return finalSource
   }, [])
 
-  return <iframe className={className} src={renderSource(source)} style={styles} title="document" />
+  return (
+    <div style={{ display: 'flex' }}>
+      {!source.includes('docs.google.com') ? <DownloadIcon source={source} /> : null}
+      <iframe className={className} src={renderSource(source)} style={styles} title="document" />
+    </div>
+  )
 }
 
 export default React.memo(DocumentRenderer)

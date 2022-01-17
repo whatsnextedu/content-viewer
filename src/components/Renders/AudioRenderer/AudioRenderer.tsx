@@ -7,9 +7,7 @@ const AudioRenderer: VFC<{ source: string; styles?: CSSProperties; className?: s
   styles,
   className
 }) => {
-  return (
-    <audio controls className={className} controlsList="nodownload" src={source} style={styles} />
-  )
+  return <audio controls className={className} src={source} style={styles} />
 }
 
 export default React.memo(AudioRenderer)
