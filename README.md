@@ -40,10 +40,10 @@ A package that provides a react component to render standard files and media typ
 ## Usage
 
 ```tsx
-import { FileViewer } from "content-viewer";
+import { FileRender } from "content-viewer";
 
 const App = () => {
-  return <FileViewer fileType={fileType} source={source} />;
+  return <FileRender fileType={fileType} source={source} />;
 }
 
 export default App
@@ -55,26 +55,26 @@ export default App
 ### CSS Class
 
 ```tsx
-<FileViewer fileType={fileType} source={source} className="awesome-class"/>
+<FileRender fileType={fileType} source={source} className="awesome-class"/>
 ```
 
 ### React Inline
 
 ```tsx
-<FileViewer fileType={fileType} source={source} styles={{width: '100%', height: 600}}/>
+<FileRender fileType={fileType} source={source} styles={{width: '100%', height: 600}}/>
 ```
 
 ### Styled Component
 
 ```tsx
-import { FileViewer } from "content-viewer";
+import { FileRender } from "content-viewer";
 import styled from "styled-components";
 
-const StyledFileViewer = styled(FileViewer)`
+const StyledFileRender = styled(FileRender)`
   border: 1px solid red;
 `;
 
-<StyledFileViewer fileType={fileType} source={source} />;
+<StyledFileRender fileType={fileType} source={source} />;
 ```
 
 ---
@@ -130,7 +130,7 @@ const StyledFileViewer = styled(FileViewer)`
 
 ## API
 
-### FileViewer props
+### FileRender props
 
 | name             | type                  |
 | ---------------- | --------------------- |
