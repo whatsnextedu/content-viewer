@@ -10,7 +10,7 @@ const ImageRenderer: VFC<{ source: string; styles?: CSSProperties; className?: s
   className
 }) => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
       <DownloadIcon source={source} />
       <img alt="img" className={className} src={source} style={styles} />
     </div>

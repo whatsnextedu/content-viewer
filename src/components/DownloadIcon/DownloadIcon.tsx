@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import SVGDownloadIcon from './SVGDownloadIcon'
 
 import type { VFC } from 'react'
 
-const DownloadIcon: VFC<{ source: string }> = ({ source }) => {
+const DownloadIcon: VFC<{ source: string; single?: boolean }> = ({ source, single = false }) => {
+  const [isHover, setIsHover] = useState(false)
+
   return (
     <a
       download
@@ -12,13 +14,20 @@ const DownloadIcon: VFC<{ source: string }> = ({ source }) => {
       style={{
         position: 'relative',
         textDecoration: 'none',
-        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+        backgroundColor: isHover ? 'rgba(115, 115, 115, 0.75)' : 'rgba(0, 0, 0, 0.75)',
         color: 'white',
-        padding: 10,
-        left: '3rem',
-        height: '1rem',
-        top: '0.9rem'
+        padding: 8,
+        height: '1.5em',
+        width: '1.5em',
+        top: '15px',
+        right: single ? '95px' : '55px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 9
       }}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
     >
       <SVGDownloadIcon />
     </a>

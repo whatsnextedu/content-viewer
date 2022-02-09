@@ -22,8 +22,8 @@ const DocumentRenderer: VFC<{ source: string; styles?: CSSProperties; className?
   }, [])
 
   return (
-    <div style={{ display: 'flex' }}>
-      {!source.includes('docs.google.com') ? <DownloadIcon source={source} /> : null}
+    <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+      {!source.includes('docs.google.com') ? <DownloadIcon single source={source} /> : null}
       <iframe className={className} src={renderSource(source)} style={styles} title="document" />
     </div>
   )

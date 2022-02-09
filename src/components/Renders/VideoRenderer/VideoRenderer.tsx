@@ -10,7 +10,7 @@ const VideoRenderer: VFC<{ source: string; styles?: CSSProperties; className?: s
   className
 }) => {
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
       <DownloadIcon source={source} />
       <video controls className={className} src={source} style={styles} />
     </div>
