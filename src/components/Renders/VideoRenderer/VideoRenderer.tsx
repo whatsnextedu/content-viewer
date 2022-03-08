@@ -2,17 +2,13 @@ import React from 'react'
 
 import DownloadIcon from '../../DownloadIcon/DownloadIcon'
 
-import type { VFC, CSSProperties } from 'react'
+import type { VFC } from 'react'
 
-const VideoRenderer: VFC<{ source: string; styles?: CSSProperties; className?: string }> = ({
-  source,
-  styles,
-  className
-}) => {
+const VideoRenderer: VFC<{ source: string }> = ({ source }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
       <DownloadIcon source={source} />
-      <video controls className={className} src={source} style={styles} />
+      <video controls src={source} />
     </div>
   )
 }

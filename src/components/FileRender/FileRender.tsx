@@ -2,14 +2,12 @@ import React from 'react'
 
 import { ImageRenderer, VideoRenderer, AudioRenderer, DocumentRenderer } from '../Renders'
 
-import type { VFC, CSSProperties } from 'react'
+import type { VFC } from 'react'
 
 const FileRender: VFC<{
   fileType: string
   source: string
-  styles?: CSSProperties
-  className?: string
-}> = ({ fileType, source, styles, className }) => {
+}> = ({ fileType, source }) => {
   return (
     <div>
       {(() => {
@@ -22,17 +20,17 @@ const FileRender: VFC<{
           case 'image/svg+xml':
           case 'image/webp':
           case 'image/tiff':
-            return <ImageRenderer className={className} source={source} styles={styles} />
+            return <ImageRenderer source={source} />
           case 'video/mp4':
           case 'video/webm':
           case 'video/ogg':
           case 'video/quicktime':
-            return <VideoRenderer className={className} source={source} styles={styles} />
+            return <VideoRenderer source={source} />
           case 'audio/mp3':
           case 'audio/wav':
           case 'audio/ogg':
           case 'audio/m4a':
-            return <AudioRenderer className={className} source={source} styles={styles} />
+            return <AudioRenderer source={source} />
           case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
           case 'application/vnd.ms-excel':
           case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
@@ -43,7 +41,7 @@ const FileRender: VFC<{
           case 'application/pdf':
           case 'text/csv':
           case 'text/tab-separated-values':
-            return <DocumentRenderer className={className} source={source} styles={styles} />
+            return <DocumentRenderer source={source} />
           default:
             return <h1>Unsupported file type</h1>
         }

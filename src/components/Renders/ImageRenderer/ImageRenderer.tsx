@@ -2,17 +2,13 @@ import React from 'react'
 
 import DownloadIcon from '../../DownloadIcon/DownloadIcon'
 
-import type { VFC, CSSProperties } from 'react'
+import type { VFC } from 'react'
 
-const ImageRenderer: VFC<{ source: string; styles?: CSSProperties; className?: string }> = ({
-  source,
-  styles,
-  className
-}) => {
+const ImageRenderer: VFC<{ source: string }> = ({ source }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
       <DownloadIcon source={source} />
-      <img alt="img" className={className} src={source} style={styles} />
+      <img alt="img" src={source} />
     </div>
   )
 }

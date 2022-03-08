@@ -2,17 +2,13 @@ import React from 'react'
 
 import AudioDownloadIcon from '../../AudioDownloadIcon/AudioDownloadIcon'
 
-import type { VFC, CSSProperties } from 'react'
+import type { VFC } from 'react'
 
-const AudioRenderer: VFC<{ source: string; styles?: CSSProperties; className?: string }> = ({
-  source,
-  styles,
-  className
-}) => {
+const AudioRenderer: VFC<{ source: string }> = ({ source }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
       <AudioDownloadIcon source={source} />
-      <audio controls className={className} src={source} style={styles} />
+      <audio controls src={source} />
     </div>
   )
 }

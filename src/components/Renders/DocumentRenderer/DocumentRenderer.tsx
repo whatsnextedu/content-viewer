@@ -2,13 +2,9 @@ import React, { useCallback } from 'react'
 
 import DownloadIcon from '../../DownloadIcon/DownloadIcon'
 
-import type { VFC, CSSProperties } from 'react'
+import type { VFC } from 'react'
 
-const DocumentRenderer: VFC<{ source: string; styles?: CSSProperties; className?: string }> = ({
-  source,
-  styles,
-  className
-}) => {
+const DocumentRenderer: VFC<{ source: string }> = ({ source }) => {
   const renderSource = useCallback((source: string): string => {
     let finalSource: string
 
@@ -24,7 +20,7 @@ const DocumentRenderer: VFC<{ source: string; styles?: CSSProperties; className?
   return (
     <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
       {!source.includes('docs.google.com') ? <DownloadIcon single source={source} /> : null}
-      <iframe className={className} src={renderSource(source)} style={styles} title="document" />
+      <iframe src={renderSource(source)} title="document" />
     </div>
   )
 }
