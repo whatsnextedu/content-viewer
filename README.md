@@ -8,8 +8,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Styling](#styling)
-  - [CSS Class](#css-class)
-  - [React Inline](#react-inline)
   - [Styled Component](#styled-component)
 - [Current Renderable File Types](#current-renderable-file-types)
   - [Document](#document)
@@ -51,18 +49,6 @@ export default App
 ---
 
 ## Styling
-
-### CSS Class
-
-```tsx
-<FileRender fileType={fileType} source={source} className="awesome-class"/>
-```
-
-### React Inline
-
-```tsx
-<FileRender fileType={fileType} source={source} styles={{width: '100%', height: 600}}/>
-```
 
 ### Styled Component
 
@@ -136,8 +122,6 @@ const StyledFileRender = styled(FileRender)`
 | ---------------- | --------------------- |
 | fileType         | `string`              |
 | source           | `string`              |
-| className?       | `string`              |
-| styles?          | `React.CSSProperties` |
 
 ---
 
