@@ -7,6 +7,7 @@ import {
   DocumentRenderer,
   YouTubeRenderer
 } from '../Renders'
+import { ContentViewerError } from '../../customError'
 
 import type { VFC } from 'react'
 
@@ -51,7 +52,7 @@ const FileRender: VFC<{
           case 'custom/youtube':
             return <YouTubeRenderer source={source} />
           default:
-            return <h1>Unsupported file type</h1>
+            throw ContentViewerError.mimeTypeError(fileType)
         }
       })()}
     </div>
