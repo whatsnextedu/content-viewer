@@ -1,6 +1,12 @@
 import React from 'react'
 
-import { ImageRenderer, VideoRenderer, AudioRenderer, DocumentRenderer } from '../Renders'
+import {
+  ImageRenderer,
+  VideoRenderer,
+  AudioRenderer,
+  DocumentRenderer,
+  YouTubeRenderer
+} from '../Renders'
 
 import type { VFC } from 'react'
 
@@ -42,6 +48,8 @@ const FileRender: VFC<{
           case 'text/csv':
           case 'text/tab-separated-values':
             return <DocumentRenderer source={source} />
+          case 'custom/youtube':
+            return <YouTubeRenderer source={source} />
           default:
             return <h1>Unsupported file type</h1>
         }
