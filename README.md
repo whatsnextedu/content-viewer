@@ -36,7 +36,7 @@ A package that provides a React component to render standard files and media typ
 import { FileRender } from "content-viewer";
 
 const App = () => {
-  return <FileRender fileType={fileType} source={source} />;
+  return <FileRender fileType={fileType} source={source} onError={() => setError()} />;
 }
 
 export default App
@@ -56,7 +56,7 @@ const StyledFileRender = styled(FileRender)`
 `;
 
 const App = () => {
-  return <StyledFileRender fileType={fileType} source={source} />;
+  return <StyledFileRender fileType={fileType} source={source} onError={() => setError()} />;
 }
 
 export default App
@@ -119,10 +119,11 @@ export default App
 ## API
 
 ### FileRender props
-| name     | type     |
-|----------|----------|
-| fileType | `string` |
-| source   | `string` |
+| name      | type         |
+|-----------|--------------|
+| fileType  | `string`     |
+| source    | `string`     |
+ | onError   | `() => void` |
 
 ---
 
