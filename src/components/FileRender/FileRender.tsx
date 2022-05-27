@@ -7,14 +7,14 @@ import {
   DocumentRenderer,
   YouTubeRenderer
 } from '../Renders'
-import { ContentViewerError } from '../../customError'
 
 import type { VFC } from 'react'
 
 const FileRender: VFC<{
   fileType: string
   source: string
-}> = ({ fileType, source }) => {
+  onError: () => void
+}> = ({ fileType, source, onError }) => {
   return (
     <div>
       {(() => {
@@ -52,7 +52,9 @@ const FileRender: VFC<{
           case 'custom/youtube':
             return <YouTubeRenderer source={source} />
           default:
-            throw ContentViewerError.mimeTypeError(fileType)
+            onError?.()
+
+            return
         }
       })()}
     </div>
