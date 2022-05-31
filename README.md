@@ -67,18 +67,18 @@ export default App
 ## Current Renderer File Types
 
 ### Document
-| Extension | MIME Type                                                                          |
-|-----------|------------------------------------------------------------------------------------|
-| doc       | application/msword                                                                 |
-| docx      | application/vnd.openxmlformats-officedocument.wordprocessingml.document            |
-| ppt       | application/vnd.ms-powerpoint                                                      |
-| pptx      | applicatiapplication/vnd.openxmlformats-officedocument.presentationml.presentation |
-| xls       | application/vnd.ms-excel                                                           |
-| xlsx      | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet                  |
-| pdf       | application/pdf                                                                    |
-| rtf       | application/rtf                                                                    |
-| csv       | text/csv                                                                           |
-| tsv       | text/tab-separated-values                                                          |
+| Extension | MIME Type                                                                 |
+|-----------|---------------------------------------------------------------------------|
+| doc       | application/msword                                                        |
+| docx      | application/vnd.openxmlformats-officedocument.wordprocessingml.document   |
+| ppt       | application/vnd.ms-powerpoint                                             |
+| pptx      | application/vnd.openxmlformats-officedocument.presentationml.presentation |
+| xls       | application/vnd.ms-excel                                                  |
+| xlsx      | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet         |
+| pdf       | application/pdf                                                           |
+| rtf       | application/rtf                                                           |
+| csv       | text/csv                                                                  |
+| tsv       | text/tab-separated-values                                                 |
 
 ### Image
 | Extension | MIME Type     |
@@ -110,21 +110,18 @@ export default App
 | Extension | MIME Type      |
 |-----------|----------------|
 | YouTube   | custom/youtube |
-| Doc       | custom/doc     |
-| Sheet     | custom/sheet   |
-| Slide     | custom/slide   |
 
 ---
 
 ## API
 
 ### FileRender props
-| name      | type         |
-|-----------|--------------|
-| fileType  | `string`     |
-| source    | `string`     |
- | onError   | `() => void` |
-
+| name     | type                                 |
+|----------|--------------------------------------|
+| fileType | `string`                             |
+| source   | `string`                             |
+ | onError  | `() => void`                         |
+| size     | `{ height: string, width: string } ` |
 ---
 
 ## License
