@@ -14,7 +14,11 @@ const FileRender: VFC<{
   fileType: string
   source: string
   onError: () => void
-}> = ({ fileType, source, onError }) => {
+  size: {
+    height: string
+    width: string
+  }
+}> = ({ fileType, source, onError, size }) => {
   return (
     <div>
       {(() => {
@@ -27,17 +31,17 @@ const FileRender: VFC<{
           case 'image/svg+xml':
           case 'image/webp':
           case 'image/tiff':
-            return <ImageRenderer source={source} />
+            return <ImageRenderer size={size} source={source} />
           case 'video/mp4':
           case 'video/webm':
           case 'video/ogg':
           case 'video/quicktime':
-            return <VideoRenderer source={source} />
+            return <VideoRenderer size={size} source={source} />
           case 'audio/mp3':
           case 'audio/wav':
           case 'audio/ogg':
           case 'audio/m4a':
-            return <AudioRenderer source={source} />
+            return <AudioRenderer size={size} source={source} />
           case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
           case 'application/vnd.ms-excel':
           case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
@@ -48,9 +52,10 @@ const FileRender: VFC<{
           case 'application/pdf':
           case 'text/csv':
           case 'text/tab-separated-values':
-            return <DocumentRenderer source={source} />
+          case 'custom/doc':
+            return <DocumentRenderer size={size} source={source} />
           case 'custom/youtube':
-            return <YouTubeRenderer source={source} />
+            return <YouTubeRenderer size={size} source={source} />
           default:
             onError?.()
 
