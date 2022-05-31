@@ -40,7 +40,7 @@
       "limit": "2 KB"
     }
   ],
-  "devDependencies": {
+  "dependencies": {
     "@size-limit/preset-small-lib": "^7.0.5",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
