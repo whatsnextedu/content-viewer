@@ -12,6 +12,7 @@
   - [Image](#image)
   - [Video](#video)
   - [Audio](#audio)
+  - [Custom](#custom)
 - [API](#api)
 - [License](#license)
 
