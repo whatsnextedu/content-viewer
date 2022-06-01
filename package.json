@@ -1,11 +1,10 @@
 {
-  "version": "1.4.0",
+  "version": "1.5.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
@@ -14,8 +13,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "eslint --fix src --ext .tsx,.ts",
-    "prepare": "tsdx build"
+    "lint": "eslint --fix src --ext .tsx,.ts"
   },
   "peerDependencies": {
     "react": ">=16"
